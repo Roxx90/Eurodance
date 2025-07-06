@@ -1,6 +1,5 @@
-const songs = [
 // 1) prilepi vse svoje "view" povezave sem ↓ (lahko jih je tudi 300)
-const viewLinks = [
+const viewLinks = {
   https://drive.google.com/file/d/1-ZlwqpOltMic859rjxQ0ZSu9SjneLPSg/view?usp=sharing,
   https://drive.google.com/file/d/1-fFVdDIhBs52Vb5kv1u0nwI8kZzvsASB/view?usp=sharing,
   https://drive.google.com/file/d/10C1Rtr36asNYXsiEHRvGrTZ6yLqu6WF1/view?usp=sharing,
@@ -201,7 +200,7 @@ const viewLinks = [
   https://drive.google.com/file/d/1ybetMAkwkSKLPCZw0JEXXeEhXJlYJb_s/view?usp=sharing,
   https://drive.google.com/file/d/1yzdxRrZpMvZ2ZEbRohD4UaOfmcvIAfYd/view?usp=sharing,
   https://drive.google.com/file/d/1zVTufuBNxPz7D7h_dxyEnCKgflx3QVw2/view?usp=sharing
-];
+};
 
 // 2) čarovnija: iz /d/<ID>/view zgradi https://docs.google.com/uc?export=download&id=<ID>
 const songs = viewLinks.map((link, idx) => {
