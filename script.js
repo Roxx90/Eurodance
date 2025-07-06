@@ -1,10 +1,8 @@
-// script.js – 200‑song Eurodance player
-// Prilepi *vseh* ~200 Google‑Drive »view« povezav v ta array.
-// JavaScript jih sam pretvori v "direct" (uc) URL‑je.
-// — Ni omejitve: če jih bo 50 ali 300, koda še zmeraj deluje.
+// script.js – 90s Eurodance predvajalnik
+
+// Zamenjaj ali dopolni te URL-je s svojimi (do ~200+)
 const viewLinks = [
-  // ↓ sem prilepiš vse svoje view URL‑je, enega na vrstico v narekovajih
-  "https://drive.google.com/file/d/1-ZlwqpOltMic859rjxQ0ZSu9SjneLPSg/view?usp=sharing",
+ "https://drive.google.com/file/d/1-ZlwqpOltMic859rjxQ0ZSu9SjneLPSg/view?usp=sharing",
   "https://drive.google.com/file/d/1-fFVdDIhBs52Vb5kv1u0nwI8kZzvsASB/view?usp=sharing",
   "https://drive.google.com/file/d/10C1Rtr36asNYXsiEHRvGrTZ6yLqu6WF1/view?usp=sharing",
   "https://drive.google.com/file/d/10CP3bJjPhhEbbEXiHfko0BbmGhD6b0k6/view?usp=sharing",
@@ -205,9 +203,10 @@ const viewLinks = [
   "https://drive.google.com/file/d/1yzdxRrZpMvZ2ZEbRohD4UaOfmcvIAfYd/view?usp=sharing",
   "https://drive.google.com/file/d/1zVTufuBNxPz7D7h_dxyEnCKgflx3QVw2/view?usp=sharing"
   // ... (dodaj še ostalih 197+ linkov)
+
 ];
 
-// Pretvori viewLinks v pesmi z uc‑linkom
+// Pretvori Google Drive “view” povezave v “uc” za predvajanje
 const songs = viewLinks.map((link, idx) => {
   const m = link.match(/\/d\/([^/]+)\//);
   const id = m ? m[1] : "";
@@ -217,10 +216,9 @@ const songs = viewLinks.map((link, idx) => {
   };
 });
 
-/* =================== Predvajalnik =================== */
 let currentIndex = 0;
 let randomMode = false;
-const playedTimestamps = {}; // indeks → epoch sekunde zadnjega predvajanja
+const playedTimestamps = {}; // indeks → epoch čas
 
 // Elementi DOM
 const audio = document.getElementById("audio");
@@ -252,7 +250,7 @@ function getNextRandomIndex() {
   const now = Date.now() / 1000;
   const candidates = songs.map((_, i) => i).filter(i => {
     const last = playedTimestamps[i] || 0;
-    return (now - last) > 3600; // 1 ura = 3600 s
+    return (now - last) > 3600; // čaka 1 uro
   });
   const pool = candidates.length ? candidates : songs.map((_, i) => i);
   let idx;
@@ -277,15 +275,16 @@ function prevSong() {
 
 function toggleShuffle() {
   randomMode = !randomMode;
-  shuffleBtn.style.background = randomMode ? "#00ff00" : "#ff00ff";
+  shuffleBtn.style.background = randomMode ? "#00ff00" : "#ffffff33";
 }
 
-// Event‑listenerji
+// Poveži gumbe
 audio.addEventListener("ended", nextSong);
 prevBtn.addEventListener("click", prevSong);
 playBtn.addEventListener("click", playPause);
 nextBtn.addEventListener("click", nextSong);
 shuffleBtn.addEventListener("click", toggleShuffle);
 
-// Init
+// Začni z 1. skladbo
 window.addEventListener("DOMContentLoaded", () => loadSong(0));
+
