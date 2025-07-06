@@ -4,11 +4,11 @@ const songs = [
     url: "https://docs.google.com/uc?export=download&id=1i3BNexCZJoF817Z0wduX5XcctT5p-Dlo"
   },
   {
-    title: "Track 2",
+    title: "2 Brothers on the 4th Floor - Let Me Be Free",
     url: "https://docs.google.com/uc?export=download&id=1QICbsrOkxheuc2eWYNIpng9TXE6IJtSN"
   },
   {
-    title: "Track 3",
+    title: "2 Unlimited - Get Ready For This",
     url: "https://docs.google.com/uc?export=download&id=1k-VBr2bzzhXjlPHnLopR8DDp9JUaf_Xz"
   }
 ];
