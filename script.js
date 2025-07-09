@@ -6,7 +6,9 @@ const songs = [
   { title: "Track 3", url: "https://shorturl.at/BBsOT" },
   { title: "Track 4", url: "https://shorturl.at/rzqVq" },
   { title: "Track 5", url: "https://shorturl.at/tyLQ9" },
-
+  { title: "Track 6", url: "https://shorturl.at/SJ84U" },
+  { title: "Track 7", url: "https://shorturl.at/XCMsS" },
+  { title: "Track 8", url: "https://shorturl.at/KkHb3" },
 ];
 
 let currentIndex = 0;
