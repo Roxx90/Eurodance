@@ -9,6 +9,8 @@ const songs = [
   { title: "Track 6", url: "https://shorturl.at/SJ84U" },
   { title: "Track 7", url: "https://shorturl.at/XCMsS" },
   { title: "Track 8", url: "https://shorturl.at/KkHb3" },
+  { title: "Track 9", url: "https://shorturl.at/0pBqr" },
+  { title: "Track 10", url: "https://shorturl.at/CNE65" },
 ];
 
 let currentIndex = 0;
